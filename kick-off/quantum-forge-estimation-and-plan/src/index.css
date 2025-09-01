@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+}
+
+/* Custom Spectacle overrides */
+.spectacle-deck {
+  background: #FFFFFF !important;
+}
+
+/* Slide transitions */
+.spectacle-slide {
+  transition: all 0.3s ease-in-out !important;
+}
+
+/* Typography improvements */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+p {
+  line-height: 1.6;
+}
+
+/* List styling */
+ul {
+  padding-left: 0;
+}
+
+li {
+  margin-bottom: 12px;
+  list-style: none;
+  position: relative;
+  padding-left: 28px;
+}
+
+li:before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: #03c7d0;
+  font-weight: bold;
+}
+
+/* Box styling */
+.styled-box {
+  transition: all 0.3s ease;
+}
+
+.styled-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(23, 23, 23, 0.15);
+}
+
+/* Progress bar styling */
+.spectacle-progress-indicator {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.spectacle-progress-indicator-bar {
+  background: linear-gradient(90deg, #5b507e 0%, #00D9FF 100%) !important;
+  height: 3px !important;
+  border-radius: 3px !important;
+}
+
+/* Fullscreen button styling */
+.spectacle-fullscreen-button {
+  background: transparent !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  border-radius: 8px !important;
+  transition: all 0.2s ease !important;
+  color: rgba(255, 255, 255, 0.8) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 8px !important;
+}
+
+.spectacle-fullscreen-button:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-color: rgba(255, 255, 255, 0.5) !important;
+  transform: scale(1.05);
+}
+
+/* Remove any default Spectacle progress wrapper backgrounds */
+div[class*="progress"] {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Animation classes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.slide-in-left {
+  animation: slideInLeft 0.6s ease-out;
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #03c7d0 0%, #02a5ad 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Teal accent */
+.accent-teal {
+  color: #03c7d0;
+}
+
+.bg-accent-teal {
+  background: #03c7d0;
+}
+
+/* Fix drag ghost image */
+[draggable="true"] {
+  -webkit-user-drag: element;
+}
+
+/* Remove text shadows globally */
+* {
+  text-shadow: none !important;
+}
+
+/* Prevent drag preview issues */
+.drag-preview {
+  opacity: 0.001;
+  position: absolute;
+  top: -1000px;
+  left: -1000px;
+}

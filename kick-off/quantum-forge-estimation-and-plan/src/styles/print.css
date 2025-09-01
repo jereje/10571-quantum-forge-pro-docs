@@ -1,0 +1,192 @@
+/* Print and PDF Export Styles */
+
+/* When in export mode, override Spectacle's default styles */
+@media print {
+  /* Fix slide container heights */
+  .spectacle-slide {
+    height: auto !important;
+    min-height: 100vh !important;
+    page-break-after: always;
+    page-break-inside: avoid;
+    overflow: visible !important;
+  }
+  
+  /* Remove page break after last slide */
+  .spectacle-slide:last-child {
+    page-break-after: avoid !important;
+  }
+  
+  /* Hide any empty slides or extra content */
+  .spectacle-slide:empty {
+    display: none !important;
+  }
+  
+  /* Ensure no extra slides after ProjectPricing (6th slide) */
+  .spectacle-slide:nth-child(7) ~ .spectacle-slide {
+    display: none !important;
+  }
+  
+  /* Ensure all slides are vertically centered */
+  .spectacle-slide {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-height: 100vh !important;
+  }
+  
+  /* Center slide content */
+  .spectacle-slide > div {
+    width: 100% !important;
+    min-height: 100vh !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  
+  /* Center inner content without stretching */
+  .spectacle-slide > div > div {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+  
+  /* Prevent flex children from stretching */
+  .spectacle-slide div[style*="height: 100%"] {
+    height: auto !important;
+  }
+  
+  /* Keep flexbox containers centered without stretching */
+  .spectacle-slide div[style*="flex: 1"] {
+    flex: none !important;
+    height: auto !important;
+  }
+
+  /* Fix flexbox layouts for print */
+  div[style*="display: flex"] {
+    min-height: auto !important;
+    height: auto !important;
+  }
+
+  /* Fix grid layouts */
+  div[style*="display: grid"] {
+    height: auto !important;
+    min-height: auto !important;
+  }
+
+  /* Calendar specific fixes */
+  /* Week calendar headers */
+  div[style*="gridTemplateColumns: repeat(7, 1fr)"] {
+    gap: 2px !important;
+    margin-bottom: 16px !important;
+  }
+
+  /* Calendar day boxes */
+  div[style*="gridTemplateColumns: repeat(7, 1fr)"] > div {
+    min-height: 40px !important;
+    padding: 4px !important;
+    font-size: 10px !important;
+  }
+
+  /* Fix text sizes in calendars */
+  div[style*="gridTemplateColumns: repeat(7, 1fr)"] span {
+    font-size: 10px !important;
+  }
+
+  /* Schedule calendar week grids */
+  div[style*="gridTemplateColumns: repeat(5, 1fr)"] > div {
+    min-height: 50px !important;
+    padding: 4px !important;
+  }
+
+  /* Fix Appear animations - show all content */
+  .spectacle-appear-wrapper {
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  /* Fix padding for all slides */
+  div[style*="padding: 80px"] {
+    padding: 40px !important;
+  }
+
+  /* Fix title positioning */
+  h1, h2, h3, h4, h5, h6 {
+    margin-top: 0 !important;
+  }
+
+  /* Ensure boxes don't overflow */
+  div[style*="background: rgba"] {
+    overflow: visible !important;
+  }
+
+
+  /* Hide interactive elements */
+  div[style*="position: fixed"] {
+    display: none !important;
+  }
+
+  /* Ensure text is readable */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+}
+
+/* Export mode specific styles */
+body[data-export-mode="true"] {
+  /* Disable animations */
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+  
+  /* Remove any empty progress bar or template elements */
+  .spectacle-progress-bar,
+  .spectacle-template,
+  [style*="position: fixed"] {
+    display: none !important;
+  }
+}
+
+/* Additional print-specific fixes */
+@media print {
+  /* Hide any navigation or controls */
+  body > div:not(#root) {
+    display: none !important;
+  }
+  
+  /* Ensure no extra content after slides */
+  #root > div > div:last-child::after {
+    content: none !important;
+  }
+  
+  /* Hide template elements that might cause extra pages */
+  .spectacle-template {
+    display: none !important;
+  }
+  
+  /* Remove any trailing whitespace or elements */
+  #root > div::after {
+    display: none !important;
+    content: none !important;
+  }
+}
+
+/* Fix for timeline week slides */
+@media print {
+  /* Timeline week calendar rows */
+  .timeline-week-calendar {
+    display: grid !important;
+    grid-template-columns: repeat(7, 1fr) !important;
+    gap: 2px !important;
+    margin-bottom: 12px !important;
+  }
+
+  .timeline-week-calendar > div {
+    min-height: 30px !important;
+    padding: 2px !important;
+  }
+}
