@@ -1,0 +1,21 @@
+Type,Section,Estimated Hours Dev,Estimated Hours UX,D&D - August,Phase 1 - September,Phase 2 - October,Phase 3 - November,Month 5,Month 6,Month 7,Control
+Project D&D,Project KickOff ,1,1,2,,,,,,,2
+Project D&D,Project Context,3,6,9,,,,,,,9
+Project D&D,Brainstorming,0,0,,,,,,,,0
+Project D&D,Competitor Analysis,0,0,,0,,,,,,0
+Project D&D,User Personas,0,6,6,,,,,,,6
+Project D&D,Functional Discovery,16,4,20,,,,,,,20
+Project D&D,Flows & Wireframes,4,24,28,,,,,,,28
+Project D&D,User Testing,0,0,,,,,,,,0
+Project D&D,Object Model,4,0,4,,,,,,,4
+Project D&D,Architecture,12,0,12,,,,,,,12
+Project D&D,Branding,0,25,25,,,,,,,25
+Project D&D,Mockups,4,24,28,,,,,,,28
+Project D&D,Style Guide,1,8,9,,,,,,,9
+Project D&D,Estimation,4,0,4,,,,,,,4
+Construction,Project Setup,32,,32,,,,,,,32
+Construction,DevOps,40,,40,,,,,,,40
+Construction,Application,620,,120,160,160,160,,,,600
+Construction,PM,120,,,40,40,40,,0,0,120
+Construction,Architecture Support,160,,40,40,40,40,,0,0,160
+Construction,UX Support,,40,10,10,10,10,,,,40
